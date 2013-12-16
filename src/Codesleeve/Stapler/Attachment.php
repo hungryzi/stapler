@@ -122,7 +122,7 @@ class Attachment
 		$this->uploadedFile = App::make('UploadedFile', $uploadedFile);
 		$this->instanceWrite('file_name', $this->uploadedFile->getClientOriginalName());
 		$this->instanceWrite('file_size', $this->uploadedFile->getClientSize());
-		$this->instanceWrite('content_type', $this->uploadedFile->getMimeType());
+		$this->instanceWrite('content_type', $this->uploadedFile->getClientMimeType());
 		$this->instanceWrite('updated_at', date('Y-m-d H:i:s'));
 		$this->queueAllForWrite();
 	}
